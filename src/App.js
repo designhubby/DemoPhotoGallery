@@ -1,25 +1,37 @@
 import logo from './logo.svg';
-import './App.css';
+
+import React, {useState, useEffect,useRef} from 'react';
+import { Route, Navigate, Routes, Switch, useHistory, useNavigate, Outlet } from 'react-router-dom';
+import { Maingallery } from './components/maingallery';
+import Main from './components/main';
+import Navbar_top from './components/navbar_top';
+import About from './components/about';
+
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { far } from '@fortawesome/free-regular-svg-icons'
+
 
 function App() {
+
+  const [img, setImg] = useState();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+      <Navbar_top setImg={setImg}/>
+      <main className="container-fluid m-0 p-0">
+        
+      <Main/>
+      <Maingallery setImg={setImg} img={img}/>
+      <About/>
+      {/* <Outlet/> */}
+      
+    </main>
     </div>
   );
 }
 
 export default App;
+library.add(fab, fas, far);

@@ -1,0 +1,234 @@
+
+
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+#masthead.masthead.bg-primary{
+  background-color: #16967d;
+  text-transform: uppercase;
+}
+
+
+.masthead{
+  padding-top: calc(6rem);
+  padding-bottom: calc(6rem);
+
+  & .masthead-avatar{
+    width: 25rem;
+    height:auto;
+  }
+
+  & .mastheading{
+    font-size: 4rem;
+    font-family: 'Archivo Black', sans-serif;
+  }
+}
+.page-section{
+  padding: 6rem 0;
+}
+.page-section-heading{
+  font-size: 3rem;
+  font-family: 'Archivo Black', sans-serif;
+
+}
+.flex-2-col{
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 1400px){
+  .break{
+    flex-basis: 100%;
+    height: 0px;
+  }
+}
+.photolistdropdown{
+  display: block;
+  position: absolute;
+  border: 1px solid gray;
+  background-color: white;
+  opacity: .5;
+  top: 3.5rem;
+  width: 13rem;
+  z-index: 10;
+
+}
+.dropdown-row {
+  text-align: left;
+  color: black;
+}
+
+div#carouselControls{
+  width: 330px;
+}
+
+.modal-background{
+  display:block;
+  position: fixed;
+  top: 50vh;
+  left: 50vw;
+  border: 6px solid black;
+  background-color: #282c34;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9;
+  scale:0 0;
+  translate: -50% -50%;
+
+  &.modalIn{
+    animation-name: backgroundZoomIn;
+    animation-duration: .5s;  
+    animation-direction:normal;
+    animation-fill-mode: forwards;
+
+  }
+  &.modalOut{
+    animation-name: backgroundZoomOut;
+    animation-direction:normal ;
+    animation-duration: .5s;  
+  }
+
+}
+.modal1{
+  display:block;
+  position: fixed;
+  top: 50vh;
+  left:50vw;
+  z-index: 10;
+  background-color: #282c34;
+  border: 5px solid black;
+  width: 80vw;
+  max-width: 700px;
+  height: auto;
+  opacity: 0;
+  translate: -50% -50%;
+  &.modalIn{
+    opacity: 1;
+    animation-name: zoomIn;
+    animation-duration: .5s;  
+    animation-direction:normal;
+    animation-fill-mode: forwards;
+  }
+  &.modalOut{
+    opacity: 1;
+    animation-name: zoomOut;
+    animation-duration: .5s;  
+    animation-direction:normal;
+    animation-fill-mode: forwards;
+  }
+}
+.modal-img{
+  
+  max-width: 100%;
+  max-height: 100%;
+  height: 90%;
+}
+
+
+
+.modal-content{
+  height: 100%;
+  &.modal-img{
+    max-width: 100%;
+    max-height: 100%;
+    height: 90%;
+  }
+}
+
+.btn-close.position{
+  display: block;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes zoomIn{
+  0%{
+    scale: 0 0;
+  }
+  50%{
+    scale: 1 .1;
+  }
+  100%{
+    scale:1 1;
+  }
+}
+
+@keyframes zoomOut {
+  0%{
+    scale:1 1;
+  }
+  50%{
+    scale: 1 .1;
+  }
+  100%{
+    scale:0 0;
+  }
+}
+
+@keyframes backgroundZoomIn{
+  0% {
+    scale:.1 .1; opacity: 0;
+  }
+  50% {
+    scale: 1 .1; opacity: .5;
+  }
+  100% {
+    scale: 1 1; opacity: .5; 
+  }
+}
+
+@keyframes backgroundZoomOut{
+  0% {
+     scale:1 1; opacity: .5; 
+  }
+  50% {
+    scale: 1 .1; opacity: .5;
+  }
+  100% {
+     scale: .1 .1; opacity: 0;
+  }
+}
+.nav-item{
+  font-size: 2rem;
+}
+$primary: #362ec4;
+
+@import '~bootstrap/scss/bootstrap.scss';

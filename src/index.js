@@ -1,13 +1,46 @@
 import React from 'react';
+import "bootstrap/dist/js/bootstrap.bundle.min";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import './App.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Main from './components/main';
+import { Maingallery } from './components/maingallery';
+import About from './components/about';
+
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element:<App/>,
+    // children:[
+    //   {
+    //     path:'/main/gallery',
+    //     element:<Maingallery/>,
+    //   },
+    //   {
+    //     path:'/main/gallery:id',
+    //     element:<Maingallery/>,
+    //   },
+    //   {
+    //     path:'/about',
+    //     element:<About/>,
+    //   }
+    // ]
+  },
+
+
+
+])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router}/>
+    
   </React.StrictMode>
 );
 
